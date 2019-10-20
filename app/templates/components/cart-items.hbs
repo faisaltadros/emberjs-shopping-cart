@@ -3,7 +3,7 @@
       <div class="card-header bg-dark text-light">
           <i class="glyphicon glyphicon-shopping-cart"></i>
           Shopping Cart
-          <a href="javascript:void(0);" {{action toggleModal false}} class="btn btn-default btn-sm pull-right">Continue Shopping</a>
+          <a href="javascript:void(0);" {{action toggleModal false}} class="btn btn-default btn-sm pull-right">Continue</a>
           <div class="clearfix"></div>
       </div>
       {{#if items.length}}
@@ -22,10 +22,10 @@
                             {{/if}}
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-6 text-md-right row">
-                            <div class="col-3 col-sm-3 col-md-3 text-md-right" style="padding-top: 5px">
+                            <div class="col-3 col-sm-3 col-md-3 text-md-right" style="padding-top: 5px; padding-right: 0;">
                                 <h6><strong><span class="text-muted">$</span>{{item.price}}</strong></h6>
                             </div>
-                            <div class="col-4 col-sm-4 col-md-4">
+                            <div class="col-4 col-sm-4 col-md-4" style="padding-left: 0;">
                                 <div class="quantity">
                                     <input type="button" value="+" class="plus" href="javascript:void(0);" {{action add item }}>
                                     <input type="number" step="1" max="99" min="1" value="{{item.quantity}}" title="Qty" class="qty"
@@ -33,7 +33,7 @@
                                     <input type="button" value="-" class="minus" href="javascript:void(0);" {{action remove item }}>
                                 </div>
                             </div>
-                            <div class="col-3 col-sm-3 col-md-3 text-md-right">
+                            <div class="col-3 col-sm-3 col-md-3 text-md-right" style="padding-right: 0;">
                                 <h6><strong><span class="text-muted">$</span></strong>{{item.subTotal}}</h6>
                             </div>
                             <div class="col-2 col-sm-2 col-md-2 text-right">

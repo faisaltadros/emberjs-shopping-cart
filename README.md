@@ -1,5 +1,5 @@
 # emberjs-shopping-cart
-A Ember js application
+A simple Ember js app where the user can add products to a cart, and the total of the cart is updated in real time.
 
 ## Prerequisites to run local
 

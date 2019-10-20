@@ -6,15 +6,14 @@ A simple Ember js app where the user can add products to a cart, and the total o
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) version: v10.15.1
-* [Ember CLI](http://www.ember-cli.com/) version: 3.7.1
+* [Node.js](http://nodejs.org/) (with NPM)
+* [Ember CLI](http://www.ember-cli.com/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd emberjs-shopping-cart`
 * `npm install`
-* `ember server`
 
 ## Running / Development
 

@@ -1,20 +1,19 @@
 # emberjs-shopping-cart
-A Ember js application
+A simple Ember js app where the user can add products to a cart, and the total of the cart is updated in real time.
 
 ## Prerequisites to run local
 
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) version: v10.15.1
-* [Ember CLI](http://www.ember-cli.com/) version: 3.7.1
+* [Node.js](http://nodejs.org/) (with NPM)
+* [Ember CLI](http://www.ember-cli.com/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd emberjs-shopping-cart`
 * `npm install`
-* `ember server`
 
 ## Running / Development
 

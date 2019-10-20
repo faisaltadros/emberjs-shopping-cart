@@ -1,0 +1,36 @@
+<div>
+  
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a href="javascript:void(0);" class="cart-icon nav-link" {{action "toggleModal" true}}>
+    {{if addedProducts.length totalItems}} <span class="glyphicon glyphicon-shopping-cart tribe-events-c-search__input-control--keyword"></span>
+  </a>
+    </li>
+  </ul>
+  <div class="wrapper--site">
+    <main>
+      <section class="product" id="product">
+        <div class="container-fluid wrapper">
+          {{available-items
+            items=availableProducts
+            add=(action "add")
+          }}
+        </div>
+      </section>
+    </main>
+  </div>
+  {{#if showModal}}
+    <div class="modal-view">
+      {{cart-items
+        items=addedProducts
+        totalSaved=totalSaved
+        totalDiscount=totalDiscount
+        add=(action "add")
+        remove=(action "remove")
+        delete=(action "delete")
+        toggleModal=(action "toggleModal")
+      }}
+    </div>
+  {{/if}}
+</div>
+{{outlet}}

@@ -1,0 +1,74 @@
+<section class="modal-content">
+  <div class="card shopping-cart">
+      <div class="card-header bg-dark text-light">
+          <i class="glyphicon glyphicon-shopping-cart"></i>
+          Shopping Cart
+          <a href="javascript:void(0);" {{action toggleModal false}} class="btn btn-default btn-sm pull-right">Continue Shopping</a>
+          <div class="clearfix"></div>
+      </div>
+      {{#if items.length}}
+        <div class="card-body">
+          {{#each items as |item|}}
+                <div class="row">
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+                                <img class="img-responsive" src="{{item.productImage}}" alt="preview" width="120" height="80">
+                        </div>
+                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-4">
+                            <h4 class="product-name"><strong>{{item.productName}}</strong></h4>
+                            {{#if item.discount}}
+                            <div class="alert alert-success" role="alert">
+                                <small>Discount applied: {{item.discountTerm}}</small>
+                            </div>
+                            {{/if}}
+                        </div>
+                        <div class="col-12 col-sm-12 text-sm-center col-md-6 text-md-right row">
+                            <div class="col-3 col-sm-3 col-md-3 text-md-right" style="padding-top: 5px">
+                                <h6><strong><span class="text-muted">$</span>{{item.price}}</strong></h6>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4">
+                                <div class="quantity">
+                                    <input type="button" value="+" class="plus" href="javascript:void(0);" {{action add item }}>
+                                    <input type="number" step="1" max="99" min="1" value="{{item.quantity}}" title="Qty" class="qty"
+                                           size="4" >
+                                    <input type="button" value="-" class="minus" href="javascript:void(0);" {{action remove item }}>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-3 text-md-right">
+                                <h6><strong><span class="text-muted">$</span></strong>{{item.subTotal}}</h6>
+                            </div>
+                            <div class="col-2 col-sm-2 col-md-2 text-right">
+                                <a href="javascript:void(0);" {{action delete item}}>
+                                  <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+          {{/each}}
+        </div>
+      {{else}}
+      <div class="card-body">
+                <div class="row">
+                    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                        <h4 class="product-name"><strong>No items in cart</strong></h4>
+                    </div>
+
+                </div>
+
+                <hr>
+        </div>
+        
+      {{/if}}
+      <div class="card-footer">
+          <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
+              Total Saved: <b>${{totalDiscount}}</b>
+          </div>
+          <div class="pull-right" style="margin: 10px">
+              <a href="" class="btn btn-success pull-right">Checkout</a>
+              <div class="pull-right" style="margin: 5px">
+                  Total price: <b>${{totalPrice}}</b>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
